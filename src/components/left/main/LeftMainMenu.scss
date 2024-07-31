@@ -1,0 +1,61 @@
+.LeftMainMenu {
+  display: flex;
+  border-top: 1px solid #fff;
+  box-shadow: 0 -0.041744rem 0.1252325rem var(--color-default-shadow);
+  position: relative;
+  z-index: var(--z-forum-panel);
+  background: var(--color-background);
+  .MenuItem {
+    padding: 0.5rem 0;
+    font-size: 0.75rem;
+    line-height: 1;
+    flex: 1 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-secondary);
+    transition: all var(--select-transition);
+    path {
+      &:not([fill]) {
+        stroke: var(--color-text-secondary);
+      }
+      &:not([stroke]) {
+        fill: var(--color-text-secondary);
+      }
+      transition: all var(--select-transition);
+    }
+    &:hover,
+    &.active {
+      background-color: var(--color-background);
+      color: var(--color-primary);
+      &:after {
+        width: 100%;
+        background-color: var(--color-primary);
+      }
+      path {
+        &:not([fill]) {
+          stroke: var(--color-primary);
+        }
+        &:not([stroke]) {
+          fill: var(--color-primary);
+        }
+      }
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0.25rem;
+      width: 0%;
+      max-width: 2.625rem;
+      height: 0.25rem;
+      background-color: var(--color-white);
+
+      border-radius: 0.25rem 0.25rem 0 0;
+      transform: translateY(0.25rem);
+      transition: all var(--select-transition);
+    }
+    i {
+      margin-right: 0;
+    }
+  }
+}

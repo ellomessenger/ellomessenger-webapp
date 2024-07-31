@@ -1,0 +1,13 @@
+node_modules
+.cache
+src/lib/gramjs/build/
+build-contest/
+tests/
+.idea
+*.iml
+dev/perf/screenshot*
+# misc
+.DS_store
+.env
+.gitlab-ci.yml
+

@@ -1,0 +1,59 @@
+.RightHeader {
+  display: flex;
+  align-items: center;
+  height: var(--header-height);
+  padding: 0.5rem 0.8125rem;
+  pointer-events: auto;
+
+  @media (max-width: 600px) {
+    padding: 0.5rem;
+  }
+
+  .close-button {
+    flex-shrink: 0;
+    svg path {
+      stroke: var(--color-text-secondary);
+    }
+  }
+
+  > .Transition {
+    flex: 1;
+    height: 100%;
+
+    > div {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  h3,
+  h4 {
+    margin-bottom: 0;
+    margin-left: 1rem;
+  }
+
+  .tools {
+    display: flex;
+    margin-left: auto;
+    .Button.translucent path {
+      &:not([fill]) {
+        stroke: var(--color-text);
+      }
+      &:not([stroke]) {
+        fill: var(--color-text);
+      }
+    }
+  }
+
+  .SearchInput {
+    margin-left: 0.5rem;
+
+    @media (min-width: 600px) {
+      margin-right: 0.5rem;
+    }
+  }
+
+  .DropdownMenu {
+    margin-left: auto;
+  }
+}

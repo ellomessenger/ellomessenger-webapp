@@ -1,0 +1,27 @@
+.pointer {
+  cursor: pointer;
+}
+
+.global-title {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+}
+
+.blue-text {
+  color: #0A49A5;
+}
+
+.input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none; // Yeah, yeah everybody write about it
+  }
+
+input[type='number'],
+  input[type="number"]:hover,
+    input[type="number"]:focus {
+      appearance: none;
+      -moz-appearance: textfield;
+    }

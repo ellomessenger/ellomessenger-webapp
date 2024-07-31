@@ -1,0 +1,27 @@
+.LastMessageMeta {
+  margin-right: 0.1875rem;
+  flex-shrink: 0;
+  font-size: 0.8125rem;
+  display: flex;
+  align-items: center;
+
+  .MessageOutgoingStatus {
+    color: var(--color-text-meta-colored);
+    margin-right: 0.125rem;
+    font-size: 1.25rem;
+    body.is-ios & {
+      margin-bottom: -0.125rem;
+    }
+    i {
+      svg {
+        path {
+          stroke: var(--color-text-meta-colored);
+        }
+      }
+    }
+  }
+
+  .time {
+    color: var(--color-text-secondary);
+  }
+}

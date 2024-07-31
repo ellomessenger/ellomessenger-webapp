@@ -1,0 +1,14 @@
+.DropdownMenu {
+  position: relative;
+  .input {
+    margin-bottom: 0;
+  }
+}
+
+.attachment-modal-more-menu {
+  path {
+    &:not([fill]) {
+      stroke: var(--color-primary);
+    }
+  }
+}

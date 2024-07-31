@@ -1,0 +1,27 @@
+.Contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.25rem;
+
+  &.interactive {
+    cursor: pointer;
+  }
+
+  .contact-info {
+    padding: 0.5rem;
+    overflow: hidden;
+    text-align: center;
+    .contact-name {
+      font-size: 1.25rem;
+      font-weight: 500;
+    }
+
+    .contact-name,
+    .contact-phone {
+      line-height: 1.45rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}

@@ -1,0 +1,62 @@
+.root {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0.5rem;
+  gap: 1rem;
+}
+
+.button {
+  &.translucent {
+    background-color: #eeeeef;
+    [stroke] {
+      stroke: #b1b1b5;
+    }
+  }
+  &.primary {
+    background-color: #0a3f8d;
+    [stroke] {
+      stroke: #b0cefa;
+    }
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+}
+
+.reason {
+  font-weight: 500;
+}
+
+.arrow {
+  font-size: 1.125rem;
+  display: inline-block;
+  transform: rotateZ(180deg);
+  &.incoming {
+    transform: rotateZ(0);
+    &.missed {
+      [stroke] {
+        stroke: var(--color-error);
+      }
+    }
+  }
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  position: relative;
+  left: -3px;
+}
+
+.duration {
+  margin-inline-start: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}
+
+:global(.own) .duration {
+  color: var(--color-message-meta-own);
+}

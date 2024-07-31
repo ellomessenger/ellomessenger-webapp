@@ -1,0 +1,37 @@
+.wallet-card {
+  width: 100%;
+
+  &__wrap {
+    max-width: 720px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 19px 0;
+  }
+
+  &__box {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 20px;
+
+    &:hover {
+      background: #F7F7F7;
+      border-radius: 12px;
+    }
+  }
+
+  &__name-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__info {
+    margin-top: 20px;
+    padding-left: 37px;
+  }
+}
+
+.recharts-cartesian-axis-line {
+  color: #F7F7F7 !important;
+}

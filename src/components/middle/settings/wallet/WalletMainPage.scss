@@ -1,0 +1,153 @@
+.wallet {
+  &.settings-container {
+    height: 100%;
+  }
+  > div {
+    height: 100%;
+  }
+  &__slide-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    margin-bottom: 12px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+    color: #070708;
+  }
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__desc {
+    p {
+      text-align: center;
+      max-width: 720px;
+
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      color: #070708;
+    }
+  }
+
+  // &__card-contant {
+  //   display: flex;
+  //   flex-direction: column;
+  //   align-items: center;
+  //   width: 100%;
+  // }
+}
+
+.welcome-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 10px;
+  height: calc(100% - var(--header-height));
+
+  &__wrap {
+    max-width: 720px;
+    width: 100%;
+    > .welcome-page__desc {
+      margin-bottom: 2.25rem;
+    }
+    p {
+      line-height: 1.2;
+    }
+
+    a {
+      margin-bottom: 25px;
+      display: block;
+    }
+  }
+
+  &__title {
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+  }
+
+  &__title-list {
+    font-weight: 500;
+    margin-bottom: 16px;
+  }
+
+  &__list {
+    list-style-position: inside;
+    padding-left: 0;
+    margin-top: 8px;
+  }
+
+  &__veriety {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 2.75rem;
+    margin-bottom: 1rem;
+    a {
+      display: block;
+      margin-top: 16px;
+    }
+  }
+
+  &__name {
+    margin-bottom: 1rem;
+  }
+
+  &__desc {
+    line-height: 1.25;
+    margin-bottom: 1.1875rem;
+    padding-left: 0.75rem;
+  }
+
+  .form-submit button {
+    max-width: 360px;
+  }
+}
+
+.left-text {
+  justify-self: start;
+  text-align: left !important;
+}
+
+.global-title {
+  margin: 0;
+}
+
+.form-control {
+  &.input-not-border {
+    text-align: center;
+    max-width: 15.625rem;
+    border: none;
+    font-size: 3rem;
+    padding: 0;
+    &.as-disabled:not(:focus) {
+      background: transparent !important;
+      border-color: transparent;
+    }
+    & + label {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translate(-50%, 0);
+      font-size: 3rem;
+      line-height: 1.17;
+      text-align: center;
+    }
+    .error & {
+      color: var(--color-error);
+    }
+  }
+}

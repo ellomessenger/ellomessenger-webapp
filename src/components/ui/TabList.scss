@@ -1,0 +1,37 @@
+.TabList {
+  position: sticky;
+  top: 0;
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-end;
+  font-size: 0.875rem;
+  flex-wrap: nowrap;
+  background-color: var(--color-background);
+  margin-bottom: 0.125rem;
+  scrollbar-width: none;
+  scrollbar-color: rgba(0, 0, 0, 0);
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5px;
+    left: 0;
+    width: 100%;
+    height: 0;
+    box-shadow: 0 0.015rem 0 0.015rem var(--color-borders);
+  }
+
+  &.big {
+    font-size: 1rem;
+    --border-radius-messages-small: 0;
+  }
+
+  &::-webkit-scrollbar {
+    height: 0;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0);
+    // `box-shadow` prevents repaint on macOS when hovering out of scrollable container
+    box-shadow: 0 0 1px rgba(255, 255, 255, 0.01);
+  }
+}

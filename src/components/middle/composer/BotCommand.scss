@@ -1,0 +1,29 @@
+.BotCommand {
+  margin: 0 !important;
+
+  .ListItem-button {
+    border-radius: 0;
+  }
+
+  .multiline-item {
+    padding: 0 0.5rem;
+    .title {
+      font-size: 0.9375rem;
+    }
+    .subtitle {
+      line-height: 1.3125;
+      font-size: 0.875rem;
+    }
+  }
+
+  &.with-avatar {
+    .multiline-item {
+      padding: 0;
+      display: flex;
+    }
+
+    .content-inner {
+      flex: 1;
+    }
+  }
+}

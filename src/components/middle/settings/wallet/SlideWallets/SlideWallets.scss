@@ -1,0 +1,114 @@
+.slide-wallet {
+  --swiper-pagination-bullet-size: 5px;
+  --swiper-theme-color: var(--color-primary);
+  padding-top: 40px;
+
+  .container-desc {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0.875rem 1rem;
+    color: white;
+    .left-side {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .right-side {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      text-align: right;
+      margin-top: 2px;
+      gap: 0.875rem;
+      div {
+        :first-child {
+          font-size: 0.6875rem;
+          line-height: 1;
+          font-weight: normal;
+        }
+        :last-child {
+          font-size: 0.9375rem;
+          font-weight: normal;
+        }
+      }
+    }
+    .amount {
+      font-size: 1.875rem;
+      font-weight: 500;
+      gap: 0.25rem;
+      [stroke] {
+        stroke: white;
+      }
+    }
+  }
+
+  &__container {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__container-img {
+    position: relative;
+    box-shadow: 0 15px 20px 0 var(--color-black-opacity-15);
+    border-radius: 0.75rem;
+    overflow: hidden;
+  }
+
+  &__pointers {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  &__point {
+    width: 5px;
+    height: 5px;
+    background: rgba(7, 7, 8, 0.15);
+    border-radius: 50%;
+
+    &:first-child {
+      background: #0a49a5;
+    }
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+  }
+
+  &__arrow-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    opacity: 0;
+    &.active {
+      opacity: 1;
+    }
+
+    div {
+      height: max-content;
+      // display: inline-block;
+    }
+
+    svg {
+      position: relative;
+      z-index: 5;
+      cursor: pointer;
+    }
+  }
+}
+
+.wallet__slide-wallet .swiper .swiper-pagination {
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: fit-content;
+}

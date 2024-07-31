@@ -1,0 +1,42 @@
+export const aiPurchases = {
+  text: {
+    title: 'Text',
+    count: 80,
+    price: 5.99,
+    per_month: 10,
+    possibilities: [
+      'TextGeneration',
+      'Completion',
+      'Translation',
+      'Summarization',
+      'QuestionsandAnswers',
+      'Paraphrasing',
+      'TextEditingAssistance',
+      'CodingHelp',
+      'Conversation',
+      'ContentIdeas',
+      'PoetryandCreativeWriting',
+      'FactsandInformation',
+      'Simulation',
+      'DataInterpretation',
+      'Conceptualization',
+    ],
+  },
+  image: {
+    count: 100,
+    price: 5.99,
+    per_month: 5,
+    possibilities: [
+      'CreateImagesBasedonPrompts',
+      'RemoveScratches',
+      'MakethePhotoColorful',
+      'IncreasethePhotosResolution',
+      'RestoreFaces',
+    ],
+  },
+  imageAndChat: {
+    count: ['40 Chats', '50 Images'],
+    price: 5.99,
+    per_month: ['10 Chat', '5 Image'],
+  },
+};

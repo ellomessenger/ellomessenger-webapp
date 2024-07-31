@@ -1,0 +1,81 @@
+.root {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 1rem;
+  > div {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  @media (max-height: 480px) {
+    height: 100%;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    word-break: break-word;
+    text-align: center;
+    max-width: 100%;
+    line-height: 1;
+  }
+
+  .description {
+    line-height: 1.2;
+    padding-left: 0.875rem;
+    text-align: center;
+    span {
+      display: block;
+      position: relative;
+      margin-bottom: 0.5rem;
+      &::before {
+        content: '•';
+        position: absolute;
+        top: 0;
+        left: -0.875rem;
+      }
+    }
+    body.is-ios &,
+    body.is-macos & {
+      color: var(--color-text-secondary-apple);
+    }
+  }
+
+  :global(.Button.pill) {
+    max-width: 100%;
+    margin-top: 0.625rem;
+    font-weight: 500;
+    padding-inline-start: 0.75rem;
+    unicode-bidi: plaintext;
+
+    justify-content: start;
+
+    .button-text {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    i {
+      margin-inline-end: 0.625rem;
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.centered {
+  flex-grow: 1;
+}
+
+.button-wrap {
+  padding-right: 3rem;
+  @media (max-width: 600px) {
+    padding-right: 3.5rem;
+  }
+}

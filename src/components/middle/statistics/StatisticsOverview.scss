@@ -1,0 +1,51 @@
+.StatisticsOverview {
+  padding: 1rem 0;
+
+  &__header {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__title {
+    margin-right: 2em;
+
+    line-height: 30px;
+
+    &:first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+  &__caption {
+    text-align: right;
+    font-weight: normal;
+  }
+
+  &__table {
+    width: 100%;
+
+    &-cell {
+      width: 50%;
+    }
+
+    &-heading {
+      font-size: 0.875rem;
+      color: var(--color-text-secondary);
+    }
+    &-value {
+      margin: 0;
+    }
+  }
+
+  &__value {
+    font-size: 0.6875rem;
+    color: var(--color-text-green);
+
+    &.negative {
+      color: var(--color-error);
+    }
+  }
+}

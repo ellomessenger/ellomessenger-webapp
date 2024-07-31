@@ -1,0 +1,100 @@
+.Switcher {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  margin: 0;
+
+  &.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  &.inactive {
+    pointer-events: none;
+  }
+
+  body.animation-level-0 &,
+  &.no-animation {
+    .widget,
+    .widget::after {
+      transition: none !important;
+    }
+
+    .widget:active:after {
+      width: 1.125rem;
+    }
+  }
+
+  input {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+    position: absolute;
+    z-index: var(--z-below);
+    opacity: 0;
+  }
+
+  .widget {
+    cursor: pointer;
+    text-indent: -999px;
+    width: 2rem;
+    height: 0.875rem;
+    background-color: var(--color-borders-checkbox);
+    display: inline-block;
+    border-radius: 0.5rem;
+    position: relative;
+    transition: background-color 150ms;
+  }
+
+  .widget:after {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: 0;
+    width: 1.25rem;
+    height: 1.25rem;
+    background-color: #4d4d50;
+    border-radius: 0.75rem;
+    transition: transform 200ms;
+    border: 2px solid var(--color-background);
+  }
+
+  input:not(:disabled):checked + .widget {
+    background: var(--color-primary);
+  }
+
+  input:checked + .widget:after {
+    transform: translateX(65%);
+  }
+  &.reverse {
+    input:not(:disabled):checked + .widget {
+      background-color: #b0cefa;
+      &::after {
+        background-color: var(--color-primary);
+      }
+    }
+  }
+  &.has-icon {
+    input:checked + .widget {
+      &::after {
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7' fill='none' viewBox='0 0 11 7'%3E%3Cpath stroke='%2351AEE7' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M1.294 4.108 3.6 6.177 9.706.824'/%3E%3C/svg%3E"),
+          var(--color-primary);
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
+  }
+}
+
+.switcher-wrap {
+  padding: 0.25rem 0 0.25rem 1.125rem;
+  display: flex;
+}
+
+.switch-control {
+  display: flex;
+  align-items: center;
+  .disabled {
+    pointer-events: none;
+  }
+}

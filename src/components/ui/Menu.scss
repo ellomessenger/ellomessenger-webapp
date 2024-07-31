@@ -1,0 +1,126 @@
+.Menu {
+  &.fluid .bubble {
+    //min-width: 13.5rem;
+    width: auto;
+  }
+
+  .backdrop {
+    position: fixed;
+    left: -100vw;
+    right: -100vw;
+    top: -100vh;
+    bottom: 0; //-100vh;
+    z-index: var(--z-menu-backdrop);
+  }
+
+  .menu-container {
+    transform-origin: top left;
+  }
+
+  &.BotCommandMenu {
+    .bubble {
+      @media (min-width: 600px) {
+        min-width: auto;
+      }
+    }
+  }
+
+  .bubble {
+    overflow: hidden;
+    list-style: none;
+    padding: 0.5rem 0;
+    margin: 0;
+    position: absolute;
+    background-color: var(--color-background);
+    box-shadow: 0px 1.58333px 3.16667px rgba(0, 0, 0, 0.14),
+      0px 0.316667px 5.7px rgba(0, 0, 0, 0.12),
+      0px 0.95px 1.58333px rgba(0, 0, 0, 0.2);
+    border-radius: var(--border-radius-default-tiny);
+    z-index: var(--z-menu-bubble);
+    transform: scale(0.85);
+    overscroll-behavior: contain;
+    transition: opacity 0.2s cubic-bezier(0.2, 0, 0.2, 1),
+      transform 0.2s cubic-bezier(0.2, 0, 0.2, 1) !important;
+    @media (min-width: 600px) {
+      min-width: 15.5rem;
+    }
+    &.custom-scroll {
+      overflow-y: auto;
+    }
+
+    body.animation-level-0 & {
+      transform: none !important;
+      transition: opacity 0.15s !important;
+    }
+
+    --offset-y: calc(100% + 0.5rem);
+    --offset-x: 0;
+
+    &.top {
+      top: var(--offset-y);
+    }
+
+    &.bottom {
+      bottom: var(--offset-y);
+    }
+
+    &.left {
+      left: var(--offset-x);
+    }
+
+    &.right {
+      right: var(--offset-x);
+    }
+
+    &.with-notice {
+      padding-bottom: 0;
+    }
+  }
+
+  body.has-open-dialog &:not(.with-menu-transitions) .bubble {
+    transition: none !important;
+  }
+
+  .notice {
+    padding: 0.5rem 0;
+    background: var(--color-chat-hover);
+    color: var(--color-text-secondary);
+    font-size: 0.8125rem;
+    text-align: center;
+  }
+
+  .footer {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    left: 0;
+    width: 100%;
+    background: var(--color-background);
+    font-size: 0.9375rem;
+    line-height: 1.125rem;
+    padding: 1rem 0.75rem;
+    box-shadow: 0px 1.58333px 3.16667px rgba(0, 0, 0, 0.14),
+      0px 0.316667px 5.7px rgba(0, 0, 0, 0.12),
+      0px 0.95px 1.58333px rgba(0, 0, 0, 0.2);
+    border-radius: var(--border-radius-default-tiny);
+  }
+
+  &.compact {
+    .bubble {
+      background: var(--color-background);
+      padding: 0.5rem 0;
+    }
+
+    .notice {
+      background: none;
+    }
+
+    &.no-blur .bubble {
+      background: var(--color-background);
+    }
+  }
+
+  .menu-loading-row {
+    margin: 0.125rem 1rem;
+    width: calc(100% - 2rem);
+  }
+}

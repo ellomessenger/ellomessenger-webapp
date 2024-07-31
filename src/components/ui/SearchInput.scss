@@ -1,0 +1,126 @@
+.SearchInput {
+  position: relative;
+  width: 100%;
+  color: rgba(var(--color-text-secondary-rgb), 0.5);
+  background-color: var(--color-chat-hover);
+  box-shadow: 0 0 0 1px var(--color-chat-hover);
+  border-radius: 1.125rem;
+  transition: border-color 0.15s ease;
+  path {
+    fill: rgba(var(--color-text-secondary-rgb), 0.5);
+  }
+  &.with-picker-item {
+    display: flex;
+
+    .icon-search {
+      display: none;
+    }
+
+    input {
+      padding-left: 0.5rem;
+    }
+
+    &[dir='rtl'] {
+      input {
+        padding-right: 0.5rem;
+        padding-left: 0;
+      }
+    }
+  }
+
+  &.is-hidding {
+    width: 100px;
+  }
+
+  &.has-focus {
+    border-color: var(--color-primary);
+    caret-color: var(--color-primary);
+    background-color: var(--color-background);
+
+    input {
+      & + i {
+        color: var(--color-primary);
+      }
+    }
+  }
+
+  input {
+    height: 2.75rem;
+    margin-bottom: 0;
+    border: none !important;
+    border-radius: 1.125rem;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    padding: calc(0.4375rem - var(--border-width))
+      calc(2.625rem - var(--border-width)) calc(0.5rem - var(--border-width))
+      calc(3.3rem - var(--border-width));
+
+    &::placeholder {
+      color: var(--color-placeholders);
+    }
+  }
+
+  > .icon {
+    position: absolute;
+    top: 0.6rem;
+    left: 1rem;
+    font-size: 1.375rem;
+    pointer-events: none;
+  }
+
+  .Loading {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 2.5rem;
+    width: 2.5rem;
+
+    .Spinner {
+      --spinner-size: 1.5rem;
+    }
+  }
+
+  .Button {
+    position: absolute;
+    top: 0.125rem;
+    right: 0.125rem;
+    font-size: 1rem;
+  }
+
+  @media (max-width: 600px) {
+    input {
+      height: 2.5rem;
+      border-radius: 1.25rem;
+      padding-left: calc(2.625rem - var(--border-width));
+    }
+
+    i {
+      top: 0.5rem;
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  &[dir='rtl'] {
+    input {
+      direction: rtl;
+    }
+
+    > i {
+      left: auto;
+      right: 0.75rem;
+    }
+
+    .Loading {
+      left: 0.5rem;
+      right: auto;
+    }
+
+    .Button {
+      left: 0.125rem;
+      right: auto;
+    }
+  }
+}

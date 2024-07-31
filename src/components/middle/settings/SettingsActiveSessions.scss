@@ -1,0 +1,48 @@
+$icons: 'android', 'apple', 'brave', 'chrome', 'edge', 'firefox', 'linux',
+  'opera', 'safari', 'samsung', 'ubuntu', 'unknown', 'vivaldi', 'windows',
+  'xbox';
+
+@mixin device-icon($icon-name) {
+  .icon-device-#{$icon-name} {
+    background-image: url('../../../assets/devices/#{$icon-name}.svg');
+  }
+}
+
+.SettingsActiveSessions {
+  .icon-device {
+    width: 2.625rem;
+    height: 2.625rem;
+    background-repeat: no-repeat;
+    background-size: 2.625rem;
+    flex: 0 0 auto;
+  }
+  .ListItem-button {
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+
+  @each $icon in $icons {
+    @include device-icon($icon);
+  }
+
+  .settings-item {
+    box-shadow: none;
+    .ListItem {
+      & + .ListItem::after {
+        left: 0;
+      }
+      &:not(.device) {
+        .ListItem-button {
+          padding-left: 1.125rem;
+        }
+      }
+    }
+  }
+  h5 {
+    color: var(--color-primary);
+    padding-left: 1.125rem;
+  }
+  .settings-item-description {
+    padding-left: 1rem;
+  }
+}

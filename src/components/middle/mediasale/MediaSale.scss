@@ -1,0 +1,65 @@
+.MediaSale {
+  .settings-container {
+    padding-top: 3.75rem;
+  }
+  .image-input {
+    max-width: 22.5rem;
+  }
+  .input {
+    margin-bottom: 1.25rem;
+  }
+  .row {
+    gap: 1.25rem;
+  }
+  .file-preview-item {
+    margin-bottom: 0.5rem;
+    &:last-of-type {
+      margin-bottom: 1.25rem;
+    }
+  }
+}
+
+.Modal {
+  .message-preview-wrap {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(180deg, #fbf4ec, #bfdff6);
+    border-radius: 0.375rem;
+    box-shadow: 0 1px 0 rgba(#000, 0.2);
+  }
+  .message-content {
+    &.media.text {
+      .Album {
+        margin: 0 -0.375rem 0 -0.5rem;
+      }
+    }
+    .message-title {
+      color: var(--color-error);
+    }
+  }
+  .media-inner {
+    margin-bottom: 0.5rem;
+  }
+
+  .sale-wrap {
+    background: var(--color-background-secondary);
+    padding: 0.75rem;
+    border-radius: var(--border-radius-messages);
+    .Button.smaller {
+      height: 1.9375rem;
+      line-height: 1.9375rem;
+      border-radius: var(--border-radius-default-smaller);
+    }
+  }
+  .sale-description {
+    font-size: 0.8125rem;
+    text-align: center;
+    font-weight: 500;
+  }
+  .policy-link {
+    color: var(--color-primary);
+    text-align: center;
+    font-size: 0.75rem;
+    margin-bottom: 0.875rem;
+  }
+}

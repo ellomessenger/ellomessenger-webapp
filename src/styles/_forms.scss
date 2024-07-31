@@ -1,0 +1,430 @@
+.max-length-indicator {
+  position: absolute;
+  right: 0.75rem;
+  bottom: 0.5rem;
+  color: var(--color-text-secondary);
+  font-size: 0.75rem;
+}
+
+.select-dropdown {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.input-group,
+.input {
+  position: relative;
+  width: 100%;
+  margin-bottom: 1rem;
+
+  label {
+    display: block;
+    padding: 0 0.25rem;
+    position: absolute;
+    left: 0.825rem;
+    top: 50%;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--color-placeholders);
+    transform: translate(0, -50%);
+    cursor: text;
+    pointer-events: none;
+    white-space: nowrap;
+    span {
+      color: var(--color-error);
+    }
+  }
+
+  &.with-arrow {
+    &::after {
+      content: '';
+      position: absolute;
+      height: 0.75rem;
+      width: 0.75rem;
+      border-left: 1px var(--color-text-secondary) solid;
+      border-bottom: 1px var(--color-text-secondary) solid;
+      transform: rotate(-45deg);
+      right: 2rem;
+      top: 1rem;
+    }
+  }
+  &:not(.as-text) {
+    &.touched label,
+    &.success label,
+    .form-control:focus + label,
+    .form-control.focus + label {
+      // transform: scale(0.75) translate(-0.5rem, -2.25rem);
+      opacity: 0;
+    }
+  }
+
+  &.touched label {
+    color: var(--color-text-secondary);
+  }
+
+  &.error label {
+    color: var(--color-error) !important;
+  }
+
+  &.success label {
+    color: var(--color-text-green) !important;
+  }
+
+  &[dir='rtl'] {
+    input {
+      text-align: right;
+    }
+
+    label {
+      left: auto;
+      right: 0.75rem;
+    }
+
+    &.with-arrow {
+      &::after {
+        border-left: none;
+        border-right: 1px var(--color-text-secondary) solid;
+        right: auto;
+        left: 2rem;
+      }
+    }
+
+    &.touched label,
+    &.error label,
+    &.success label,
+    .form-control:focus + label,
+    .form-control.focus + label {
+      transform: scale(0.75) translate(1.5rem, -2.25rem);
+    }
+  }
+  .input-notification--error {
+    color: var(--color-error);
+    font-size: 0.875rem;
+    margin-top: 5px;
+    margin-bottom: 0;
+    text-align: left;
+    line-height: 1;
+  }
+  + .note {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    margin: 1.5rem 0.25rem;
+    margin-top: -0.5625rem;
+    color: var(--color-text-secondary);
+  }
+  &.as-text {
+    .form-control {
+      border: none;
+      padding: 0;
+      height: auto;
+      border-radius: 0;
+    }
+    label {
+      font-size: 0.875rem;
+      left: 0;
+      top: 1.125rem;
+      transform: none;
+    }
+    &.success,
+    &.error {
+      label {
+        opacity: 1;
+      }
+    }
+  }
+  &.has-prefix:not(.prefix-inside) {
+    .input-wrapper {
+      display: flex;
+    }
+    .form-control {
+      display: inline-block;
+      width: auto;
+    }
+  }
+  &.prefix-inside {
+    .form-control {
+      padding-left: 3rem;
+    }
+    label {
+      left: 2.75rem;
+    }
+    .prefix {
+      display: inline-flex;
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translate(0, -50%);
+    }
+  }
+  &.underline {
+    .form-control {
+      border-width: 0 0 1px;
+      border-color: var(--color-gray);
+      border-radius: 0;
+      height: auto;
+      padding-bottom: 0.375rem;
+      padding-top: 0.375rem;
+      &.as-disabled {
+        background: transparent;
+        border-color: var(--color-gray);
+      }
+      + label {
+        left: 0;
+        top: 0.3125rem;
+      }
+    }
+  }
+  &.no-border {
+    .form-control {
+      border-width: 0;
+      border-radius: 0;
+      height: auto;
+      padding-bottom: 0.375rem;
+      padding-top: 0.375rem;
+      padding-left: 0;
+      + label {
+        left: 0;
+        top: 0.3125rem;
+      }
+    }
+  }
+}
+
+.sublabel {
+  margin-bottom: 0.25rem;
+  font-size: 0.6875rem;
+  &.required::after {
+    content: '*';
+    color: var(--color-error);
+  }
+}
+
+.form-control {
+  --border-width: 1px;
+  display: block;
+  width: 100%;
+  height: 3.375rem;
+  padding: calc(0.75rem - var(--border-width))
+    calc(1.25rem - var(--border-width));
+  border: var(--border-width) solid var(--color-borders-input);
+  border-radius: var(--border-radius-default);
+  color: var(--color-text);
+  background-color: var(--color-background);
+  outline: none;
+  transition: border-color 0.15s ease;
+  word-break: break-word;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  &[dir] {
+    text-align: initial;
+  }
+
+  &:hover {
+    border-color: var(--color-primary);
+  }
+
+  &:focus,
+  &.focus {
+    border-color: var(--color-primary);
+    //box-shadow: inset 0 0 0 1px var(--color-primary);
+    caret-color: var(--color-primary);
+    & ~ .right {
+      button {
+        background-color: var(--color-background);
+      }
+    }
+    // & + label {
+    //   color: var(--color-primary);
+    // }
+  }
+
+  &::placeholder {
+    color: var(--color-placeholders);
+  }
+
+  &:disabled {
+    background: #eeeeef;
+    border-color: #eeeeef;
+  }
+  &.as-disabled:not(:focus) {
+    background: #eeeeef;
+    border-color: #eeeeef;
+  }
+
+  .error & {
+    border-color: var(--color-error);
+    // box-shadow: inset 0 0 0 1px var(--color-error);
+    caret-color: var(--color-error);
+  }
+
+  .success:not(.as-text) & {
+    border-color: var(--color-text-green);
+    box-shadow: inset 0 0 0 1px var(--color-text-green);
+    caret-color: var(--color-text-green);
+  }
+
+  // Disable yellow highlight on autofill
+  &:autofill,
+  &:-webkit-autofill-strong-password,
+  &:-webkit-autofill-strong-password-viewable,
+  &:-webkit-autofill-and-obscured {
+    box-shadow: inset 0 0 0 10rem var(--color-background);
+    -webkit-text-fill-color: var(--color-text);
+  }
+
+  // Hide hint for Safari password strength meter
+  &::-webkit-strong-password-auto-fill-button {
+    opacity: 0;
+    width: 0 !important;
+    overflow: hidden !important;
+    max-width: 0 !important;
+    min-width: 0 !important;
+    clip: rect(0, 0, 0, 0);
+    position: absolute;
+  }
+
+  &::-ms-clear,
+  &::-ms-reveal {
+    display: none;
+  }
+  &.smaller {
+    height: 3rem;
+  }
+  @media (max-height: 520px) {
+    height: 3rem;
+  }
+}
+
+select.form-control {
+  option {
+    line-height: 2rem;
+  }
+}
+
+textarea.form-control {
+  resize: none;
+  overflow: hidden;
+  height: auto;
+  min-height: 54px;
+  line-height: 1.3125rem;
+  padding-top: calc(1rem - var(--border-width));
+  padding-bottom: calc(1.25rem - var(--border-width));
+}
+
+.input-group.password-input {
+  position: relative;
+
+  .form-control {
+    padding-right: 3.375rem;
+  }
+
+  .toggle-password {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 3.375rem;
+    height: 3.375rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    outline: none !important;
+
+    color: var(--color-text-secondary);
+    opacity: 0.7;
+    font-size: 1.5rem;
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+  }
+
+  &[dir='rtl'] {
+    .form-control {
+      padding-left: 3.375rem;
+      padding-right: calc(0.9rem - var(--border-width));
+    }
+
+    .toggle-password {
+      left: 0;
+      right: auto;
+    }
+  }
+}
+
+.input-icon {
+  position: absolute;
+  top: 0;
+  padding: 0 1.125rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  > * {
+    display: inline-flex;
+  }
+  &.right {
+    margin-left: 0.8rem;
+    right: 0;
+  }
+  &.left {
+    left: 0;
+    path {
+      &:not([fill]) {
+        stroke: var(--color-text-secondary);
+      }
+      &:not([stroke]) {
+        fill: var(--color-text-secondary);
+      }
+    }
+    & + .form-control {
+      padding-left: 3rem;
+      & + label {
+        padding-left: 3rem;
+      }
+    }
+  }
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+form {
+  p {
+    font-size: 0.875rem;
+    text-align: left;
+  }
+}
+
+.auth-password-center {
+  display: flex;
+  align-items: center;
+
+  @media (max-height: 520px) or (max-width: 600px) {
+    align-items: normal;
+  }
+}
+
+.password-mask {
+  -webkit-text-security: disc;
+  -moz-webkit-text-security: disc;
+  -moz-text-security: disc;
+}
+
+.auth-password-form {
+  .input {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.confirm-dialog-input {
+  .form-control {
+    height: 3.125rem;
+  }
+}
+
+.form-submit {
+  display: flex;
+  flex-direction: column;
+}

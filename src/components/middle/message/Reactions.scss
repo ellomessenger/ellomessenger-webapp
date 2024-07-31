@@ -1,0 +1,130 @@
+.Reactions {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  flex-wrap: wrap;
+  overflow: visible;
+  margin-top: 0.5rem;
+  min-height: 1.125rem;
+  &.like {
+    .Button {
+      --reaction-background: white;
+      border-radius: 0.75rem;
+      border: 1px solid rgba(7, 7, 8, 0.05);
+      font-size: 0.75rem;
+      color: var(--color-text);
+      height: 1.6875rem;
+    }
+
+    .size {
+      height: auto;
+    }
+  }
+  .Button {
+    --reaction-background: var(--color-reaction);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    height: 2rem;
+    white-space: nowrap;
+    width: auto;
+    margin: 0.125rem;
+    padding: 0 0.411rem;
+    border: 2px solid transparent;
+    background-color: var(--reaction-background);
+    border-radius: 1.75rem;
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+    text-transform: none;
+    color: var(--accent-color);
+    overflow: visible;
+    line-height: 1.75rem;
+
+    .avatars {
+      display: flex;
+
+      .Avatar {
+        margin: 0;
+        margin-inline-start: -0.25rem;
+        border: 0.0625rem solid var(--reaction-background);
+        width: 1.5rem;
+        height: 1.5rem;
+
+        &:first-child {
+          margin: 0;
+        }
+      }
+    }
+
+    &.chosen {
+      position: relative;
+      z-index: 1;
+    }
+
+    .counter {
+      margin-inline-end: 0.125rem;
+    }
+
+    &.liked {
+      --reaction-background: #d8e7fd !important;
+    }
+
+    &:hover {
+      --reaction-background: var(--hover-color-reaction) !important;
+    }
+
+    &:first-of-type {
+      margin-inline-start: 0;
+    }
+
+    &:last-of-type {
+      margin-inline-end: 0;
+    }
+  }
+
+  &.is-outside {
+    margin-top: 0.125rem;
+  }
+
+  .own &.is-outside {
+    flex-direction: row-reverse;
+
+    .Button {
+      &:first-of-type {
+        margin-inline-start: 0.125rem;
+        margin-inline-end: 0;
+      }
+
+      &:last-of-type {
+        margin-inline-end: 0.125rem;
+        margin-inline-start: 0;
+      }
+    }
+  }
+
+  &.is-outside .Button {
+    --reaction-background: var(--pattern-color);
+    color: white;
+    .theme-dark & {
+      color: var(--accent-color);
+    }
+
+    &.chosen {
+      .theme-dark & {
+        border-color: var(--accent-color);
+      }
+    }
+  }
+  .MessageMeta {
+    margin-top: 0;
+  }
+}
+
+.reaction-buttons-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.reverse {
+  flex-direction: row-reverse;
+}

@@ -1,0 +1,35 @@
+.Management .radio-right .Radio .Radio-main {
+  &::before {
+    right: 1.125rem;
+    left: auto;
+    top: 0.25rem;
+    transform: none;
+    background-color: transparent;
+    box-shadow: none;
+    border: transparent;
+  }
+}
+
+.Management .radio-right .Radio .Radio-main {
+  &::after {
+    content: '✔';
+    right: 2.05rem;
+    left: auto;
+    top: 0.1rem;
+    transform: none;
+    color: white;
+    width: 0;
+    height: 0;
+  }
+}
+
+.radio-right .Radio input:checked ~ .Radio-main {
+  &::before {
+    background-color: var(--color-primary);
+    box-shadow: 0 0 0 2px var(--color-primary);
+  }
+}
+
+.Management .permission-list .radio-right .Radio {
+  padding-left: 0;
+}

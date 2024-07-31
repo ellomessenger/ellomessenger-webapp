@@ -1,0 +1,111 @@
+@import '../../styles/mixins';
+
+.AvatarEditable {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  .settings-edit-profile & {
+    margin-bottom: 2rem;
+  }
+  .label {
+    margin-left: auto;
+    margin-right: auto;
+    width: 7.5rem;
+    height: 7.5rem;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    color: white;
+    font-size: 3rem;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    outline: none !important;
+    transition: border-radius 200ms;
+    .settings-edit-profile & {
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+    input {
+      display: none;
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    i {
+      transform: scale(1);
+      width: 48px;
+      height: 48px;
+      transition: transform 0.15s linear;
+      z-index: var(--z-register-add-avatar);
+    }
+
+    // @optimization The weirdest workaround for screen animation lag
+    @include while-transition() {
+      input,
+      i,
+      &::after {
+        display: none !important;
+      }
+
+      img {
+        position: static !important;
+      }
+    }
+
+    &:hover {
+      i {
+        transform: scale(1.2);
+      }
+    }
+
+    &.filled {
+      background-color: var(--color-background);
+
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        //background-color: rgba(black, 0.4);
+      }
+    }
+
+    &.disabled {
+      pointer-events: none;
+
+      i {
+        display: none;
+      }
+
+      &::after {
+        display: none;
+      }
+    }
+
+    &.rounded-square {
+      border-radius: var(--border-radius-forum-avatar);
+    }
+  }
+  .Button.link {
+    font-size: 0.9375rem;
+    svg {
+      display: none;
+      .settings-edit-profile & {
+        display: inline-block;
+      }
+    }
+  }
+}

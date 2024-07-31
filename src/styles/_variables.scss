@@ -1,0 +1,346 @@
+@use 'sass:color';
+
+@function toRGB($color) {
+  @return red($color) + ', ' + green($color) + ', ' + blue($color);
+}
+
+@function ground($opacity) {
+  @return rgba($color-black, $opacity);
+}
+
+@function blend-normal($foreground, $background) {
+  $opacity: opacity($foreground);
+  $background-opacity: opacity($background);
+
+  // calculate opacity
+  $bm-red: color.red($foreground) * $opacity + color.red($background) *
+    $background-opacity * (1 - $opacity);
+  $bm-green: color.green($foreground) * $opacity + color.green($background) *
+    $background-opacity * (1 - $opacity);
+  $bm-blue: color.blue($foreground) * $opacity + color.blue($background) *
+    $background-opacity * (1 - $opacity);
+  @return rgb($bm-red, $bm-green, $bm-blue);
+}
+
+$color-primary: #0a49a5;
+
+$color-links: #0a49a5;
+
+$color-placeholders: #929298;
+
+$color-text-green: #04b505;
+$color-text-gray: #74747b;
+$color-green: #27ae60;
+$color-light-green: #eeffde;
+
+$color-error: #ef4062;
+
+$color-warning: #fb8c00;
+
+$color-yellow: #fdd764;
+
+$color-white: #ffffff;
+$color-black: #070708;
+$color-dark-gray: #2e3939;
+$color-gray: #cfcfd2;
+$color-text-secondary: #929298;
+$color-text-secondary-apple: #8a8a90;
+$color-text-meta: #686c72;
+$color-text-meta-apple: #8c8c91;
+$color-borders: #cfcfd2;
+$color-borders-checkbox: #b1b1b5;
+$color-dividers: #c8c6cc;
+$color-dividers-android: #e7e7e7;
+$color-item-active: #ededed;
+$color-chat-hover: #eeeeef;
+$color-chat-active: #0a49a5;
+$color-selection: #3993fb;
+
+// https://github.com/telegramdesktop/tdesktop/wiki/Theme-Reference#user-content-standard-color-constants
+// Colors borrowed from https://github.com/telegramdesktop/tdesktop/blob/dev/Telegram/Resources/day-blue.tdesktop-theme
+// historyPeer[1-8]UserpicBg
+$color-user-1: #e17076;
+$color-user-2: #7bc862;
+$color-user-3: #e5ca77;
+$color-user-4: #65aadd;
+$color-user-5: #a695e7;
+$color-user-6: #ee7aae;
+$color-user-7: #6ec9cb;
+$color-user-8: #faa774;
+
+$color-1: #2d9cdb;
+$color-2: #44be2e;
+$color-3: #5179e0;
+$color-4: #ef4062;
+$color-5: #f2c94c;
+$color-6: #ff9900;
+$color-7: #6ec9cb;
+$color-8: #faa774;
+$color-9: #9b51e0;
+$color-10: #619df5;
+
+$color-message-reaction: #d8e7fd;
+
+$color-message-reaction-hover: #c5def9;
+$color-message-reaction-own: #cef0ba;
+$color-message-reaction-own-hover: #b5e0a4;
+
+:root {
+  --theme-background-color: #{$color-white};
+  --color-background: #{$color-white};
+  --color-background-compact-menu: #ffffffbb;
+  --color-background-compact-menu-reactions: #ffffffeb;
+  --color-background-compact-menu-hover: #000000b2;
+  --color-background-selected: #f4f4f5;
+  --color-background-secondary: #f6f6f6;
+  --color-background-secondary-accent: #e4e4e5;
+  --color-background-own: #{$color-light-green};
+  --color-background-own-selected: color.adjust($color-light-green, -10%);
+  --color-text: #{$color-black};
+  --color-text-lighter: #{$color-dark-gray};
+  --color-text-secondary: #{$color-text-secondary};
+  --color-icon-secondary: #{$color-text-secondary};
+  --color-text-secondary-rgb: #{toRGB($color-text-secondary)};
+  --color-text-secondary-apple: #{$color-text-secondary-apple};
+  --color-text-meta: #{$color-text-meta};
+  --color-text-meta-rgb: #{toRGB($color-text-meta)};
+  --color-text-meta-colored: #{$color-text-green};
+  --color-text-meta-apple: #{$color-text-meta-apple};
+  --color-text-green: #{$color-text-green};
+  --color-text-gray: #{$color-text-gray};
+  --color-text-green-rgb: #{toRGB($color-text-green)};
+  --color-borders: #{$color-borders};
+  --color-underline: #{$color-item-active};
+  --color-borders-rgb: #{toRGB($color-borders)};
+  --color-borders-input: #{$color-borders};
+  --color-borders-checkbox: #{$color-borders-checkbox};
+  --color-dividers: #{$color-dividers};
+  --color-dividers-android: #{$color-dividers-android};
+  --color-webpage-initial-background: #{$color-dark-gray};
+  --color-interactive-active: var(--color-primary);
+  --color-interactive-inactive: rgba(var(--color-text-secondary-rgb), 0.25);
+  --color-interactive-buffered: rgba(
+    var(--color-text-secondary-rgb),
+    0.25
+  ); // Overlays underlying inactive element
+  --color-interactive-element-hover: rgba(
+    var(--color-text-secondary-rgb),
+    0.08
+  );
+  --color-composer-button: #{$color-text-secondary}CC;
+
+  --color-voice-transcribe-button: #e8f3ff;
+  --color-voice-transcribe-button-own: #cceebf;
+
+  --color-primary: #{$color-primary};
+  --color-primary-shade: #{color.mix($color-primary, $color-white, 100%)};
+  --color-primary-shade-darker: #{color.mix($color-primary, $color-black, 84%)};
+  --color-primary-shade-rgb: #{toRGB(
+      color.mix($color-primary, $color-black, 92%)
+    )};
+  --color-primary-opacity: rgba(var(--color-primary), 0.25);
+  --color-primary-opacity-hover: rgba(var(--color-primary), 0.15);
+  --color-green: #{$color-green};
+  --color-green-shade: #{color.mix($color-green, $color-white, 90%)};
+  --color-green-darker: #{color.mix($color-green, $color-black, 84%)};
+  --color-success: #{$color-2};
+  --color-black-opacity-60: #{ground(0.6)};
+  --color-black-opacity-35: #{ground(0.35)};
+  --color-black-opacity-40: #{ground(0.4)};
+  --color-black-opacity-30: #{ground(0.3)};
+  --color-black-opacity-15: #{ground(0.15)};
+  --color-black-opacity-20: #{ground(0.2)};
+  --color-error: #{$color-error};
+  --color-error-shade: #{color.mix($color-error, $color-black, 92%)};
+  --color-error-rgb: #{toRGB($color-error)};
+
+  --color-warning: #{$color-warning};
+
+  --color-yellow: #{$color-yellow};
+
+  --color-links: #{$color-links};
+
+  --color-own-links: #{$color-white};
+
+  --color-placeholders: #{$color-placeholders};
+
+  --color-pinned: #{$color-white};
+
+  --color-code: #4a729a;
+  --color-code-bg: #{rgba($color-text-secondary, 0.08)};
+  --color-code-own: #3c7940;
+  --color-code-own-bg: #{rgba($color-text-secondary, 0.08)};
+
+  --color-accent-own: #{$color-white};
+  --color-message-meta-own: #{$color-text-green};
+
+  --color-message-reaction: $color-message-reaction;
+  --color-message-reaction-hover: $color-message-reaction-hover;
+  --color-message-reaction-own: $color-message-reaction-own;
+  --color-message-reaction-hover-own: $color-message-reaction-own-hover;
+
+  --color-reply-hover: #{blend-normal(
+      rgba($color-text-secondary, 0.08),
+      $color-white
+    )};
+  --color-reply-active: #{blend-normal(
+      rgba($color-text-secondary, 0.16),
+      $color-white
+    )};
+  --color-reply-own-hover: #{blend-normal(
+      rgba($color-text-green, 0.12),
+      $color-light-green
+    )};
+  --color-reply-own-active: #{blend-normal(
+      rgba($color-text-green, 0.24),
+      $color-light-green
+    )};
+
+  --color-background-own-apple: #dcf8c5;
+  --color-reply-own-hover-apple: #cbefb7;
+  --color-reply-own-active-apple: #bae6a8;
+
+  --color-white: #{$color-white};
+  --color-gray: #{$color-gray};
+  --color-chat-username: #3c7eb0;
+  --color-chat-hover: #{$color-chat-hover};
+  --color-chat-active: #{$color-chat-active};
+  --color-item-active: #{$color-item-active};
+
+  --color-selection-highlight: #{$color-selection};
+  --color-selection-highlight-emoji: rgba(#{toRGB($color-selection)}, 0.7);
+
+  --color-user-1: #{$color-user-1};
+  --color-user-2: #{$color-user-2};
+  --color-user-4: #{$color-user-4};
+  --color-user-5: #{$color-user-5};
+  --color-user-6: #{$color-user-6};
+  --color-user-7: #{$color-user-7};
+  --color-user-8: #{$color-user-8};
+
+  --color-1: #{$color-1};
+  --color-2: #{$color-2};
+  --color-3: #{$color-3};
+  --color-4: #{$color-4};
+  --color-5: #{$color-5};
+  --color-6: #{$color-6};
+  --color-7: #{$color-7};
+  --color-8: #{$color-8};
+  --color-9: #{$color-9};
+  --color-10: #{$color-10};
+
+  --color-default-shadow: rgba(0, 0, 0, 0.15);
+  --color-light-shadow: #7272722b;
+
+  --color-skeleton-background: rgba(33, 33, 33, 0.15);
+  --color-skeleton-foreground: rgba(232, 232, 232, 0.2);
+
+  --color-scrollbar: rgba(90, 90, 90, 0.3);
+  --color-scrollbar-code: rgba(200, 200, 200, 0.3);
+
+  --color-telegram-blue: #{$color-primary};
+
+  --color-forum-hover-unread-topic: #e9e9e9;
+  --color-forum-hover-unread-topic-hover: #dcdcdc;
+
+  --color-deleted-account: #9789d1;
+  --color-archive: #9eaab5;
+
+  --vh: 1vh;
+
+  --border-radius-default: 1rem;
+  --border-radius-default-bigger: 1.25rem;
+  --border-radius-default-small: 0.625rem;
+  --border-radius-default-smaller: 0.5rem;
+  --border-radius-default-tiny: 0.25rem;
+  --border-radius-messages: 0.75rem;
+  --border-radius-messages-small: 0.25rem;
+  --border-radius-messages-medium: 0.375rem;
+  --border-radius-forum-avatar: 33%;
+  --messages-container-width: 45.5rem;
+  --right-column-width: 26.5rem;
+  --header-height: 4rem;
+  --left-menu-height: 3.8125rem;
+  --custom-emoji-size: 1.25rem;
+  --custom-emoji-border-radius: 0;
+
+  --symbol-menu-width: 24rem;
+  --symbol-menu-height: 23.25rem;
+  --symbol-menu-footer-height: 2.125rem;
+
+  @media (min-width: 1276px) and (max-width: 1920px) {
+    --right-column-width: 25vw;
+  }
+
+  @media (max-width: 925px) {
+    --right-column-width: 20.5rem;
+  }
+
+  @media (max-width: 600px) {
+    --right-column-width: 100vw;
+    --symbol-menu-width: 100vw;
+    --symbol-menu-height: 14.6875rem;
+  }
+
+  --z-lock-screen: 3000;
+  --z-ui-loader-mask: 2000;
+  --z-notification: 1700;
+  --z-confetti: 1600;
+  --z-reaction-picker: 1200;
+  --z-story-viewer: 1150;
+  --z-reaction-interaction-effect: 1100;
+  --z-right-column: 900;
+  --z-header-menu: 990;
+  --z-header-menu-backdrop: 980;
+  --z-modal: 1510;
+  --z-media-viewer: 1500;
+  --z-video-player-controls: 3;
+  --z-drop-area: 55;
+  --z-animation-fade: 50;
+  --z-menu-bubble: 21;
+  --z-menu-backdrop: 20;
+  --z-message-highlighted: 14;
+  --z-message-context-menu: 13;
+  --z-scroll-down-button: 12;
+  --z-mobile-search: 12;
+  --z-middle-header: 11;
+  --z-middle-footer: 11;
+  --z-country-code-input-group: 10;
+  --z-message-select-control: 9;
+  --z-message-select-area: 8;
+  --z-sticky-date: 9;
+  --z-register-add-avatar: 5;
+  --z-forum-panel: 5;
+  --z-media-viewer-head: 3;
+  --z-symbol-menu-mobile: calc(var(--z-story-viewer) + 1);
+  --z-resize-handle: 2;
+  --z-below: -1;
+
+  --spinner-white-data: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTEwLjggMjIuNEM2IDIxLjkgMi4xIDE4IDEuNiAxMy4yLjkgNy4xIDUuNCAxLjkgMTEuMyAxLjVjLjQgMCAuNy0uMy43LS43IDAtLjQtLjQtLjgtLjgtLjhDNC44LjQtLjIgNS45IDAgMTIuNS4yIDE4LjYgNS40IDIzLjggMTEuNSAyNGM2LjYuMiAxMi00LjggMTIuNC0xMS4yIDAtLjQtLjMtLjgtLjgtLjgtLjQgMC0uNy4zLS43LjctLjMgNS45LTUuNSAxMC40LTExLjYgOS43eiIgZmlsbD0iI2ZmZmZmZiIvPjwvc3ZnPg==);
+  --spinner-white-thin-data: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzOCIgaGVpZ2h0PSIzOCIgZmlsbD0ibm9uZSI+PG1hc2sgaWQ9ImEiIGZpbGw9IiNmZmYiPjxwYXRoIGQ9Ik0wIDE5QTE5IDE5IDAgMSAwIDE5IDB2My44QTE1LjIgMTUuMiAwIDEgMSAzLjggMTlIMFoiLz48L21hc2s+PHBhdGggc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjgiIGQ9Ik0wIDE5QTE5IDE5IDAgMSAwIDE5IDB2My44QTE1LjIgMTUuMiAwIDEgMSAzLjggMTlIMFoiIG1hc2s9InVybCgjYSkiLz48L3N2Zz4=);
+  --spinner-blue-data: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTM2IiBoZWlnaHQ9IjEzNSIgdmlld0JveD0iMCAwIDEzNiAxMzUiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGlkPSJMb2FkIiBkPSJNMiA2Ny41QzIgMTAzLjk1MSAzMS41NDkyIDEzMy41IDY4IDEzMy41QzEwNC40NTEgMTMzLjUgMTM0IDEwMy45NTEgMTM0IDY3LjVDMTM0IDMxLjA0OTIgMTA0LjQ1MSAxLjUgNjggMS41IiBzdHJva2U9IiMwQTQ5QTUiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=);
+  --spinner-dark-blue-data: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTEwLjggMjIuNEM2IDIxLjkgMi4xIDE4IDEuNiAxMy4yLjkgNy4xIDUuNCAxLjkgMTEuMyAxLjVjLjQgMCAuNy0uMy43LS43IDAtLjQtLjQtLjgtLjgtLjhDNC44LjQtLjIgNS45IDAgMTIuNS4yIDE4LjYgNS40IDIzLjggMTEuNSAyNGM2LjYuMiAxMi00LjggMTIuNC0xMS4yIDAtLjQtLjMtLjgtLjgtLjgtLjQgMC0uNy4zLS43LjctLjMgNS45LTUuNSAxMC40LTExLjYgOS43eiIgZmlsbD0iIzgzNzhEQiIvPjwvc3ZnPg==);
+  --spinner-black-data: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTEwLjggMjIuNEM2IDIxLjkgMi4xIDE4IDEuNiAxMy4yLjkgNy4xIDUuNCAxLjkgMTEuMyAxLjVjLjQgMCAuNy0uMy43LS43IDAtLjQtLjQtLjgtLjgtLjhDNC44LjQtLjIgNS45IDAgMTIuNS4yIDE4LjYgNS40IDIzLjggMTEuNSAyNGM2LjYuMiAxMi00LjggMTIuNC0xMS4yIDAtLjQtLjMtLjgtLjgtLjgtLjQgMC0uNy4zLS43LjctLjMgNS45LTUuNSAxMC40LTExLjYgOS43eiIgZmlsbD0iIzJlMzkzOSIvPjwvc3ZnPg==);
+  --spinner-green-data: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTEwLjggMjIuNEM2IDIxLjkgMi4xIDE4IDEuNiAxMy4yLjkgNy4xIDUuNCAxLjkgMTEuMyAxLjVjLjQgMCAuNy0uMy43LS43IDAtLjQtLjQtLjgtLjgtLjhDNC44LjQtLjIgNS45IDAgMTIuNS4yIDE4LjYgNS40IDIzLjggMTEuNSAyNGM2LjYuMiAxMi00LjggMTIuNC0xMS4yIDAtLjQtLjMtLjgtLjgtLjgtLjQgMC0uNy4zLS43LjctLjMgNS45LTUuNSAxMC40LTExLjYgOS43eiIgZmlsbD0iIzRmYWU0ZSIvPjwvc3ZnPg==);
+  --spinner-gray-data: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTEwLjggMjIuNEM2IDIxLjkgMi4xIDE4IDEuNiAxMy4yLjkgNy4xIDUuNCAxLjkgMTEuMyAxLjVjLjQgMCAuNy0uMy43LS43IDAtLjQtLjQtLjgtLjgtLjhDNC44LjQtLjIgNS45IDAgMTIuNS4yIDE4LjYgNS40IDIzLjggMTEuNSAyNGM2LjYuMiAxMi00LjggMTIuNC0xMS4yIDAtLjQtLjMtLjgtLjgtLjgtLjQgMC0uNy4zLS43LjctLjMgNS45LTUuNSAxMC40LTExLjYgOS43eiIgZmlsbD0iIzcwNzU3OSIvPjwvc3ZnPg==);
+  --spinner-yellow-data: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTEwLjggMjIuNEM2IDIxLjkgMi4xIDE4IDEuNiAxMy4yLjkgNy4xIDUuNCAxLjkgMTEuMyAxLjVjLjQgMCAuNy0uMy43LS43IDAtLjQtLjQtLjgtLjgtLjhDNC44LjQtLjIgNS45IDAgMTIuNS4yIDE4LjYgNS40IDIzLjggMTEuNSAyNGM2LjYuMiAxMi00LjggMTIuNC0xMS4yIDAtLjQtLjMtLjgtLjgtLjgtLjQgMC0uNy4zLS43LjctLjMgNS45LTUuNSAxMC40LTExLjYgOS43eiIgZmlsbD0iI0ZERDc2NCIvPjwvc3ZnPg==);
+
+  --drag-target-border: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='8' ry='8' stroke='%23929298' stroke-width='2' stroke-dasharray='9.1%2c 10.5' stroke-dashoffset='3' stroke-linecap='round'/%3e%3c/svg%3e");
+  --drag-target-border-hovered: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='8' ry='8' stroke='%230a49a5' stroke-width='2' stroke-dasharray='9.1%2c 10.5' stroke-dashoffset='3' stroke-linecap='round'/%3e%3c/svg%3e");
+
+  --layer-blackout-opacity: 0.3;
+
+  --layer-transition: 300ms cubic-bezier(0.33, 1, 0.68, 1);
+  --slide-transition: 300ms cubic-bezier(0.25, 1, 0.5, 1);
+  --select-transition: 200ms ease-out;
+
+  body.is-ios {
+    --layer-transition: 450ms cubic-bezier(0.33, 1, 0.68, 1);
+    --slide-transition: 450ms cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  body.is-android {
+    --layer-transition: 450ms cubic-bezier(0.25, 1, 0.5, 1);
+    --slide-transition: 400ms cubic-bezier(0.25, 1, 0.5, 1);
+  }
+}

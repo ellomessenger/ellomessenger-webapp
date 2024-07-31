@@ -1,0 +1,42 @@
+#NewChat {
+  height: 100%;
+}
+
+.left-header {
+  position: relative;
+  height: var(--header-height);
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  background-color: var(--color-background);
+  //box-shadow: 0 2px 2px var(--color-light-shadow);
+  h4,
+  h3 {
+    margin-bottom: 0;
+    user-select: none;
+  }
+
+  .SearchInput {
+    margin-left: 0.5rem;
+    max-width: calc(100% - 1rem);
+
+    @media (max-width: 600px) {
+      max-width: calc(100% - 1rem);
+    }
+  }
+
+  @media (max-width: 600px) {
+    padding: 0.5rem;
+    --header-height: 3rem;
+  }
+
+  .Button.smaller {
+    width: 2.5rem;
+    height: 2.5rem;
+    min-width: 2.5rem;
+    + .DropdownMenu {
+      margin-left: 0.25rem;
+    }
+  }
+}

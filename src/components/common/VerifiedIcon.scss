@@ -1,0 +1,16 @@
+.VerifiedIcon {
+  display: inline-block;
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+
+  --color-fill: var(--color-primary);
+  --color-checkmark: #fff;
+  path {
+    fill: var(--color-fill);
+  }
+
+  circle {
+    fill: var(--color-checkmark);
+  }
+}

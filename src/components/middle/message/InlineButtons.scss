@@ -1,0 +1,74 @@
+.InlineButtons {
+  display: flex;
+  width: 100%;
+  max-width: var(--max-width);
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  .row {
+    width: 100%;
+    gap: 0.5rem;
+  }
+  .col {
+    width: 100%;
+  }
+
+  .Button {
+    flex: 1;
+    background: #95bbdf;
+    border-radius: var(--border-radius-messages-medium);
+    font-weight: 500;
+    text-transform: none;
+    width: 100%;
+    transition: background-color 150ms, color 150ms, backdrop-filter 150ms,
+      filter 150ms;
+    &.primary {
+      color: var(--color-text);
+    }
+    &.tiny {
+      font-size: 0.9375rem;
+      height: 2.5rem;
+    }
+    &:hover,
+    &:focus {
+      background: #40525f !important;
+      backdrop-filter: brightness(115%);
+      color: white;
+      @supports not (backdrop-filter: brightness(115%)) {
+        filter: brightness(115%);
+      }
+    }
+
+    i {
+      font-size: 0.875rem;
+      position: absolute;
+      right: 0.1875rem;
+      top: 0.1875rem;
+      display: block;
+
+      &.icon-arrow-right {
+        font-size: 0.75rem;
+        top: 0.125rem;
+        right: 0.125rem;
+        transform: rotate(-45deg);
+      }
+    }
+    .phoenix-bot & {
+      background: #6886b0;
+      color: white;
+      &:hover,
+      &:focus {
+        background: #3f608e !important;
+      }
+    }
+  }
+
+  .inline-button-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    line-height: 1.2;
+  }
+}

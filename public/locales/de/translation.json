@@ -1,0 +1,108 @@
+{
+  "Login": {
+    "title": "Войти",
+    "question": "Впервые в BitriHub?",
+    "link": "Авторизироваться",
+    "btn": "Войти",
+    "notif_success": "Вы вошли в аккаунт ",
+    "not_registered": "Учетная запись BitriHub не найдена.",
+    "log_out": "Выйти",
+    "you_exit": "Вы вышли из платформы",
+    "login_again": "Пожалуйста, войдите снова."
+  },
+  "Registration": {
+    "title": "Создать аккаунт",
+    "question": "Уже есть аккаунт?",
+    "link": "Зарегистрироваться",
+    "btn": "Регистрация",
+    "email_is_busy": "Электронная почта занята",
+    "please_another": "Пожалуйста, используйте другую",
+    "completed": "Регистрация завершена"
+  },
+  "ForgotPassword": {
+    "title": "Забыли пароль",
+    "link": "Забыли пароль?",
+    "back": "Вернуться ко Входу",
+    "text": "Пожалуйста, введите свой электронный адрес, чтобы получить код сброса пароля",
+    "notif_request": "",
+    "title_creat": "Создать новый пароль",
+    "text_new_passvord": "Введите новый пароль для аккаунта",
+    "forgot_completed": "Вы успешно сменили пароль",
+    "valid_list_1": " Минимальная длина пароля – 8 символов.",
+    "valid_list_2": "Содержит как цифры, так и буквы.",
+    "valid_list_3": "Пароль нельзя использовать ранее последних 4 попыток смены пароля.",
+    "valid_list_4": "Допускаются особые знаки.",
+    "follow_this_link": "На {{email}} отправлено письмо. Перейдите по ссылке в письме для ввода нового пароля."
+  },
+  "Button": {
+    "confirm": "Подтвердить",
+    "next": "Следующая",
+    "ok": "Хорошо"
+  },
+  "Forms": {
+    "Register": {
+      "email": "Электронная почта",
+      "password": "Пароль",
+      "confirm_password": "Подтвердите пароль",
+      "agree_terms": "Я согласен с",
+      "agree_terms_conditions": "Условия и положения",
+      "agree_terms_and": "и",
+      "agree_terms_privat": "Политикой конфиденциальности",
+      "agree_width": "Я согласен с",
+      "agree_width_cookie": "Политикой файлов cookie",
+      "btn": "Регистрация",
+      "referral": "Промо Код"
+    },
+    "ForgotPassword": {
+      "new_password": "Новый пароль",
+      "confirm_password": "Подтвердите пароль",
+      "btn": "подтвердить"
+    }
+  },
+  "Validation": {
+    "email_format": "Неверный формат электронной почты!",
+    "required_email": "Пожалуйста, введите свой адрес электронной почты!",
+    "password_required": "Пожалуйста введите ваш пароль!",
+    "password_confirm": "Пожалуйста подтвердите ваш пароль!",
+    "password_match": "Пароли должны совпадать",
+    "password_validation": "Пароль должен состоять не менее чем из 8 символов и включать 1 заглавную букву, 1 строчную букву, 1 цифру и 1 специальный символ.",
+
+    "password_max_length": "Максимальное количество символов должно быть не более 25!",
+    "cookie_policy": "Вы должны согласиться с политикой использования файлов cookie!",
+    "accept_terms": "Вы должны согласиться с условиями и политикой конфиденциальности!",
+    "captcha_required": "Подтвердите, что вы не робот",
+    "required_field": "Это поле обязательно"
+  },
+  "Errors": {
+    "something_went_wrong": "Something went wrong",
+    "too_many_requests": "Слишком много запросов",
+    "internal_server_error": "Ошибка сервера",
+    "the_email_has_already_been_taken": "the email has already been taken",
+    "Email": {
+      "the_email_has_already_been_taken": "the email has already been taken"
+    },
+    "the_selected_email_is_invalid": "Адрес электронной почты недействителен",
+    "the_selected_token_is_invalid": "Токен недействителен",
+    "invalid_credentials": "Неверный логин или пароль"
+  },
+  "Confirm": {
+    "follow_this_link": "На {{email}} отправлено письмо. Перейдите по ссылке в письме для подтверждения своего email.",
+    "link_invalid": "Cсылка не действительна"
+  },
+  "Header": {
+    "menu_goods": {
+      "title": "Товары"
+    }
+  },
+  "Page": {
+    "General": {
+      "title": "Загальні налаштування"
+    }
+  },
+  "Wallet": {
+    "card_number": "Card Number",
+    "dd_mm_yy": "dd mm yy",
+    "cvv": "cvv",
+    "wallet_successfully_created": "Гаманець створено успішно"
+  }
+}

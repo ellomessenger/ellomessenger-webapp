@@ -1,0 +1,111 @@
+{
+  "Save": "Save",
+  "Close": "Close",
+  "Ok": "Ok",
+  "Cancel": "Cancel",
+  "Language": "Language",
+  "Send": "Send",
+  "Login": {
+    "place_username": "Email or Username",
+    "place_password": "Password",
+    "btn": "Log in",
+    "log_out": "Выйти",
+    "you_exit": "Вы вышли из платформы",
+    "forgot_link": "Forgot the password?",
+    "by_qr": "Log in by QR code",
+    "by_login": "Log in by Login and password",
+    "qr_heading": "Log in to Ello by QR Code",
+    "qr_help1": "Open Ello app on your phone",
+    "qr_help2": "Go to Settings > Devices > Link Desktop Device",
+    "qr_help3": "Point your phone at this screen to confirm login"
+  },
+  "Registration": {
+    "place_username": "Username",
+    "place_password": "Password",
+    "label_gender": "Gender",
+    "label_country": "Country",
+    "country_none": "No country list",
+    "place_confirm_password": "Re-type password",
+    "place_email": "Email address",
+    "btn": "Registration",
+    "public": "Public",
+    "private": "Private",
+    "personal_public_heading": "Personal public  profile",
+    "personal_private_heading": "Personal private  profile",
+    "business_public_heading": "Business public  profile",
+    "business_private_heading": "Business private  profile",
+    "personal_title": "Personal profile",
+    "business_title": "Business profile",
+    "public_description": "You can be contacted by anyone who finds you through a search.",
+    "private_description": "Nobody can locate you through a search. To start communicating, you need to send an invite link or QR code."
+  },
+  "ForgotPassword": {
+    "heading": "Reset password",
+    "text": "Enter your email address to reset your password."
+  },
+  "Button": {
+    "confirm": "Подтвердить",
+    "next": "Следующая",
+    "ok": "Хорошо"
+  },
+  "Validation": {
+    "email_format": "Invalid email format!",
+    "required_email": "Please enter your email address!",
+    "required_username": "Please enter your username!",
+    "password_required": "Please enter your password!",
+    "password_confirm": "Please confirm your password!",
+    "password_match": "Passwords must match",
+    "password_validation": "The password must be at least 8 characters long and include 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character",
+    "max_length": "Max length 4",
+    "min_length": "Min length 3",
+    "min_deposit": "Min deposit is $10",
+    "max_deposit": "Max deposit is $99999",
+    "password_max_length": "The maximum number of characters must be no more than 25!",
+    "accept_terms": "You must agree to the terms and privacy policy!",
+    "required_field": "This field is required!"
+  },
+  "Errors": {
+    "something_went_wrong": "Something went wrong",
+    "too_many_requests": "Слишком много запросов",
+    "internal_server_error": "Ошибка сервера",
+    "the_email_has_already_been_taken": "the email has already been taken",
+    "Email": {
+      "the_email_has_already_been_taken": "the email has already been taken"
+    },
+    "the_selected_email_is_invalid": "Адрес электронной почты недействителен",
+    "the_selected_token_is_invalid": "Токен недействителен",
+    "invalid_credentials": "Неверный логин или пароль"
+  },
+  "Confirm": {
+    "follow_this_link": "На {{email}} отправлено письмо. Перейдите по ссылке в письме для подтверждения своего email.",
+    "link_invalid": "Cсылка не действительна"
+  },
+
+  "Calendar": {
+    "lng_month1": "January",
+    "lng_month2": "February",
+    "lng_month3": "March",
+    "lng_month4": "April",
+    "lng_month5": "May",
+    "lng_month6": "June",
+    "lng_month7": "July",
+    "lng_month8": "August",
+    "lng_month9": "September",
+    "lng_month10": "October",
+    "lng_month11": "November",
+    "lng_month12": "December",
+    "lng_weekday1": "Monday",
+    "lng_weekday2": "Tuesday",
+    "lng_weekday3": "Wednesday",
+    "lng_weekday4": "Thursday",
+    "lng_weekday5": "Friday",
+    "lng_weekday6": "Saturday",
+    "lng_weekday7": "Sunday"
+  },
+  "Wallet": {
+    "card_number": "Card Number",
+    "dd_mm_yy": "dd mm yy",
+    "cvv": "cvv",
+    "wallet_successfully_created": "Wallet successfully created"
+  }
+}

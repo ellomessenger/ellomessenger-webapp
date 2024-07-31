@@ -1,0 +1,27 @@
+.limit-list-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  .ListItem {
+    flex-grow: 1;
+    &.chat-item-clickable {
+      .ListItem-button {
+        padding: 0.375rem 0.5rem;
+      }
+    }
+  }
+  .Button {
+    padding: 0;
+    &.round {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+    &.danger:not(.disabled):not(:disabled) {
+      background-color: var(--color-error);
+      color: var(--color-white);
+      [stroke] {
+        stroke: var(--color-white);
+      }
+    }
+  }
+}

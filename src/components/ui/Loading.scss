@@ -1,0 +1,30 @@
+.Loading {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &.interactive {
+    cursor: pointer;
+  }
+
+  p {
+    font-size: 0.875rem;
+    color: #74747b;
+    max-width: 320px;
+    text-align: center;
+  }
+
+  .Spinner {
+    --spinner-size: 2.375rem;
+    &.with-background {
+      &::before {
+        left: -0.375rem;
+        top: -0.375rem;
+        bottom: -0.375rem;
+        right: -0.375rem;
+      }
+    }
+  }
+}

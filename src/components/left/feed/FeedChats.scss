@@ -1,0 +1,36 @@
+.FeedChats {
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 1;
+  --color-message-reaction: #f2f2f2;
+  .left-header {
+    box-shadow: none;
+    justify-content: center;
+  }
+  .Button.text {
+    font-size: 0.875rem;
+  }
+  .feed-header {
+    display: none;
+  }
+}
+.middle-messages-feed,
+.FeedChats {
+  .LeftMainMenu {
+    width: 100%;
+    box-shadow: 0px 1.33469px 2.33571px 0px rgba(0, 0, 0, 0.17);
+    &:not(.bottom-menu) {
+      .MenuItem {
+        font-size: 0.9375rem;
+        padding: 0.625rem 0 0.875rem;
+        font-weight: 500;
+        &::after {
+          max-width: 4rem;
+        }
+      }
+    }
+  }
+}

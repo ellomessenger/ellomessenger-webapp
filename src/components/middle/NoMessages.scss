@@ -1,0 +1,71 @@
+.NoMessages {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .icon {
+    font-size: 5rem;
+    margin: 0 auto 1rem;
+  }
+
+  .topic-icon {
+    --custom-emoji-size: 3rem;
+    width: 3rem;
+    height: 3rem;
+    font-size: 2rem;
+  }
+
+  .AnimatedSticker {
+    margin: 0 auto;
+  }
+
+  .wrapper {
+    background: rgba(6, 100, 168, 0.3);
+    padding: 0.9375rem;
+    border-radius: 0.625rem;
+    max-width: 15.9375rem;
+
+    &[dir='rtl'] {
+      text-align: right;
+    }
+  }
+
+  .title {
+    margin-bottom: 0.25rem;
+    text-align: center;
+    unicode-bidi: plaintext;
+  }
+
+  .description {
+    font-size: 0.875rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    unicode-bidi: plaintext;
+  }
+
+  .img-wrap {
+    text-align: center;
+  }
+
+  .topic-description {
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .list-checkmarks {
+    font-size: 0.875rem;
+    margin: 0.25rem 0 0;
+    padding: 0;
+    list-style: none;
+    unicode-bidi: plaintext;
+    line-height: 1.2;
+
+    li::before {
+      content: '•';
+      margin-inline-end: 0.5rem;
+    }
+  }
+}
